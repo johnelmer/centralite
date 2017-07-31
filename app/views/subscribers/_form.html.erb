@@ -1,0 +1,20 @@
+<div class="container">
+  <%= form_for @subscriber, class: 'form-horizontal' do |f| %>
+
+    <div class="form-group">
+      <%= f.label :firstName, class: 'col-sm-2 control-label' %><br>
+      <%= f.text_field :firstName, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :'ID Number', class: 'col-sm-2 control-label' %><br>
+      <%= f.text_area :idNumber, class: 'form-control'%>
+    </div>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+  <% end %>
+
+</div>
