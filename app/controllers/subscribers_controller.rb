@@ -4,7 +4,7 @@ class SubscribersController < ApplicationController
   end
 
   def new
-    @subscriber = Subscriber.new(params[:subscriber])
+    @subscriber = Subscriber.new()
   end
 
   def edit
