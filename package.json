@@ -1,0 +1,13 @@
+{
+  "name": "centralite",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

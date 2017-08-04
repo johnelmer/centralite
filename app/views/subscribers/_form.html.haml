@@ -1,0 +1,45 @@
+%div{class: 'panel panel-default'}
+  .panel-heading
+    %h3.panel-title
+      .clearfix
+        Subscriber Registration
+        .pull-right
+          %a{href: '/subscribers'}
+            Back
+  .panel-body
+    = form_for @subscriber, html: {class: 'form-horizontal'} do |f|
+      .form-group
+        = f.label :'Control Number', nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.number_field :controlNumber, placeholder: 'Control Number', class: 'form-control'
+      .form-group
+        = f.label :'ID Number', nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :idNumber, placeholder: 'ID Number', class: 'form-control'
+      .form-group
+        = f.label :'First Name', nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :firstName, placeholder: 'First Name', class: 'form-control'
+      .form-group
+        = f.label :'Last Name', nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :lastName, placeholder: 'Last Name', class: 'form-control'
+      .form-group
+        = f.label :'Contact Number', nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :contactNumber, placeholder: 'Contact Number', class: 'form-control'
+      .form-group
+        = f.label :email, nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.email_field :email, placeholder: 'Email', class: 'form-control'
+      .form-group#subject_select
+        = f.label :college, nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.select :college, { CAS:'CAS', COE:'COE', COED:'COED', CCS:'CCS', THEOLOGY:'Theology', CHM:'CHM', NURSING:'Nursing', PHARMACY:'Pharmacy', CMLS:'CMLS', CBA:'CBA', CARES:'CARES', LAW:'Law', MEDICINE:'Medicine', GS: 'Graduate Studies'}, { include_blank: "Please select one" }, { class: "form-control" }
+      .form-group
+        = f.label :Course, nil, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :course, placeholder: 'Course', class: 'form-control'
+      .form-group
+        %div{class: 'col-sm-offset-2 col-sm-10'}
+          = submit_tag 'Register Subscriber', class: 'btn btn-default'

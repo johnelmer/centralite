@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Centralite 2018
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', params[:controller], media: 'all', 'data-turbolinks-track': 'reload'
+  %body
+    - flash.each do |name, msg|
+      %div{class: "alert alert-#{name} alert-dismissible", role: 'alert'}
+        %button.close{type: 'button', 'data-dismiss': 'alert', 'aria-label': 'Close'}
+          %span{'aria-hidden': 'true'} &times;
+        = msg
+    .container
+      = yield
